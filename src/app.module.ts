@@ -7,6 +7,7 @@ import { join } from 'path'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import { PostsModule } from './modules/posts/posts.module'
+import { AuthorsModule } from './modules/authors/authors.module';
 
 @Module({
   imports: [
@@ -30,6 +31,8 @@ import { PostsModule } from './modules/posts/posts.module'
     }),
 
     PostsModule,
+
+    AuthorsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
