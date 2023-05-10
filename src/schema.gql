@@ -10,6 +10,7 @@ type Post {
 
 type Query {
   posts: [Post!]!
+  findPostById(id: Int!): Post!
 }
 
 type Mutation {

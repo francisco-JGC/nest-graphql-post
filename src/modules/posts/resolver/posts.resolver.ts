@@ -1,4 +1,4 @@
-import { Args, Mutation, Query, Resolver } from '@nestjs/graphql'
+import { Args, Int, Mutation, Query, Resolver } from '@nestjs/graphql'
 import { CreatePostInput } from '../dto/create-post.input'
 import { Post } from '../entities/posts.entity'
 import { PostsService } from '../services/posts.service'
@@ -10,6 +10,11 @@ export class PostsResolver {
   @Query((returns) => [Post])
   posts() {
     return this.postsService.findAll()
+  }
+
+  @Query((returns) => Post)
+  findPostById(@Args('id', { type: () => Int }) id: number) {
+    return this.postsService.findOne(id)
   }
 
   @Mutation((returns) => Post)

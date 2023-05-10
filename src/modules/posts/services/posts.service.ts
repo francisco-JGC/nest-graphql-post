@@ -15,4 +15,8 @@ export class PostsService {
     const objectField = this.postRepo.create(post)
     return this.postRepo.save(objectField)
   }
+
+  findOne(id: number): Promise<Post> {
+    return this.postRepo.findOne({ where: { id } })
+  }
 }
