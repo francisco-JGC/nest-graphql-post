@@ -22,6 +22,6 @@ export class Post {
   authorId: number
 
   @ManyToOne(() => Author, (author) => author.posts)
-  @Field()
+  @Field(() => Author)
   author: Author
 }

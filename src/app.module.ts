@@ -6,8 +6,8 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import { join } from 'path'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
+import { AuthorsModule } from './modules/authors/authors.module'
 import { PostsModule } from './modules/posts/posts.module'
-import { AuthorsModule } from './modules/authors/authors.module';
 
 @Module({
   imports: [
@@ -31,7 +31,6 @@ import { AuthorsModule } from './modules/authors/authors.module';
     }),
 
     PostsModule,
-
     AuthorsModule,
   ],
   controllers: [AppController],
